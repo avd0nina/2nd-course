@@ -1,0 +1,34 @@
+с) $A(t) = t\sqrt{1 - t} = t * (1 - t)^{\frac{1}{2}} = t \sum_{n = 0}^{\infty} \binom{\frac{1}{2}}{n} t^n = \sum_{n = 0}^{\infty} \binom{\frac{1}{2}}{n} (-1)^n t^{n + 1} = \sum_{n = 1}^{\infty} \binom{\frac{1}{2}}{n - 1} (-1)^{n - 1} t^{n}$
+$a_n = (-1)^{n - 1} \binom{\frac{1}{2}}{n - 1}$
+$a_n = 
+\begin{cases}
+0, n = 0; \\
+(-1)^{n - 1} \binom{\frac{1}{2}}{n - 1}, n >= 1. 
+\end{cases}
+$
+h) $A(t) = \frac{2 - t}{1 + t^2} = \frac{2}{1 + t^2} - \frac{t}{1 + t^2}$
+$\frac{1}{1 + x} = \sum_{n = 0}^{\infty} (-1)^n x^n$
+$\frac{1}{1 + t^2} = \sum_{n = 0}^{\infty} (-1)^n t^{2n}$
+$\frac{2}{1 + t^2} = 2\sum_{n = 0}^{\infty} (-1)^n t^{2n}$
+$\frac{t}{1 + t^2} = t\sum_{n = 0}^{\infty} (-1)^n t^{2n} = \sum_{n = 0}^{\infty} (-1)^n t^{2n + 1}$
+$A(t) = 2\sum_{n = 0}^{\infty} (-1)^n t^{2n} - \sum_{n = 0}^{\infty} (-1)^n t^{2n + 1} = \sum_{n = 0}^{\infty} (2(-1)^n t^{2n} - (-1)^n t^{2n + 1})$
+Для чётных n = 2k: $a_{2k} = 2(-1)^k$
+Для нечетных n = 2k + 1: $a_{2k + 1} = (-1)^{k + 1}$
+$a_n = \begin{cases}
+2(-1)^{\frac{n}{2}}, если n чётное\\
+(-1)^{\frac{n + 1}{2}}, если n нечетное\\
+\end{cases}$
+i) $A(t) = (1 - t)^{-1} e^{-t}$
+$(1 - t)^{-1} = \frac{1}{1 - t} = \sum_{n = 0}^{\infty} t^n$
+$e^-t = \sum_{n = 0}^{\infty} \frac{(-t)^n}{n!}$
+$A(t) = (\sum_{n = 0}^{\infty} t^n)(\sum_{n = 0}^{\infty} \frac{(-t)^n}{n!})$
+Пусть $B(t) = \sum_{n = 0}^{\infty} t^n$, тогда $b_n = (-1)^n t^n \binom{-1}{n}$
+Пусть $C(t) = \sum_{n = 0}^{\infty} \frac{(-t)^n}{n!}$, тогда $c_n = (-1)^n \frac{t^n}{n!}$
+Значит, раз $A(t) = B(t) * C(t)$, то $a_n = b_0 * c_n + b_1 * c_{n - 1} + ... + b_n * c_0$
+$A(t) = (1 - t)^{-1} e^{-t}$
+$(1 - t)^{-1} = \frac{1}{1 - t} = \sum_{n = 0}^{\infty} t^n$. Отсюда $b_n = 1$
+$e^-t = \sum_{n = 0}^{\infty} \frac{(-t)^n}{n!} = \sum_{n = 0}^{\infty} \frac{(-1)^n t^n}{n!}$. Отсюда $c_n = \frac{(-1)^n}{n!}$
+$A(t) = (\sum_{n = 0}^{\infty} t^n)(\sum_{n = 0}^{\infty} \frac{(-1)^n t^n}{n!})$
+$a_n = \sum_{k = 0}^{n} b_k c_{n - k}$
+$A(t) = B(t) * C(t)$
+$a_n = \sum_{k = 0}^n b_n c_{n - k} = \sum_{k = 0}^n \frac{(-1)^{n - k}}{(n - k)!}$
