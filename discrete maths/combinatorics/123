@@ -1,0 +1,20 @@
+e) Последовательность ${n(n + 1)}_{n = 0}^\infty$
+Её производящая функция: $A(t) = \sum_{n = 0}^\infty n(n + 1)t^n$
+$\int A(t) = \int \sum_{n = 0}^\infty n(n + 1)t^n = \sum_{n = 0}^\infty \int n(n + 1)t^n = \sum_{n = 0}^\infty (n(n + 1) \frac{t^{n + 1}}{n + 1} = \sum_{n = 0}^\infty nt^{n + 1} = t * \sum_{n = 0}^\infty n t^n = \frac{t^2}{(1 - t)^2}$
+$A(t) = \frac{2t(1 - t)^2 + 2t^2(1 - t)}{(1 - t)^4} = \frac{(1 - t)(2t(1 - t) + 2t^2)}{(1 - t)^4} = \frac{2t - 2t^2 + 2t^2}{(1 - t)^3} = \frac{2t}{(1 - t)^3}$
+f) Последовательность ${n^2}_{n = 0}^\infty$
+Её производящая функция: $A(t) = \sum_{n = 0}^\infty n^2t^n$
+$\frac{A(t)}{t} = \sum_{n = 0}^\infty n^2t^{n - 1}$
+$\int \frac{A(t)}{t} = \int \sum_{n = 0}^\infty n^2t^{n - 1} = \sum_{n = 0}^\infty \int n^2t^{n - 1} = \sum_{n = 0}^\infty n^2 \frac{t^n}{n} = \sum_{n = 0}^\infty nt^n = \frac{t}{(1 - t)^2}$
+$\frac{A(t)}{t} = \frac{(1 - t)^2 + 2t(1 - t)}{(1 - t)^4} = \frac{(1 - t)(1 - t + 2t)}{(1 - t)^4} = \frac{1 + t}{(1 - t)^3}$
+$A(t) = \frac{t(1 + t)}{(1 - t)^3}$
+j) Последовательность ${f_n}_{n = 0}^\infty$
+Её производящая функция: $A(t) = \sum_{n = 0}^\infty f_n t^n = f_0 + f_1t + \sum_{n = 2}^\infty (f_{n - 1} + f_{n - 2})t^n = 1 + t + \sum_{n = 2}^\infty (f_{n - 1} + f_{n - 2})t^n = 1 + t + \sum_{n = 2}^\infty f_{n - 1}t^n + \sum_{n = 2}^\infty f_{n - 2}t^n$
+$\sum_{n = 2}^\infty f_{n - 1}t^n = t \sum_{n = 1}^{\infty} f_n t^n = t(F(t) - f_0)$
+$\sum_{n = 2}^\infty f_{n - 2}t^n = t^2 \sum_{n = 0}^{\infty} f_n t^n = t^2 F(t)$
+$A(t) = 1 + t + t(F(t) - 1) + t^2 F(t) = 1 + t + t F(t) - t + t^2 F(t) = t^2 F(t) + t F(t) - t + 1 + t = t^2 F(t) + t F(t) + 1$
+$F(t) = t^2 F(t) + t F(t) + 1$
+$t^2 F(t) + t F(t) - F(t) = -1$
+$F(t)(t^2 + t - 1) = -1$
+$F(t)(1 - t - t^2) = 1$
+$F(t) = \frac{1}{1 - t - t^2}$
