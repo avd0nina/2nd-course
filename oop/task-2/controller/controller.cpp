@@ -5,7 +5,6 @@
 
 const std::string Digits = "012345678";
 
-//correct ticks
 int checkNum(const std::string &num) {
     if (num.empty() || (num[0] == '0' && num.size() > 1)) {
         throw std::invalid_argument("Ticks are zero or negatice");
@@ -50,8 +49,6 @@ void printInFile(
     }
 }
 
-
-//rонструкторы
 SimulationController::SimulationController() {
     model_ = std::make_unique<Game_model>();
 }
@@ -116,7 +113,6 @@ SimulationController::SimulationController(
     }
 }
 
-//метод
 void SimulationController::play_game() {
     try {
         if (!out_file.empty()) {
