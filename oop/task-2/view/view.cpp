@@ -36,6 +36,5 @@ void Game_view::printFrame(
         }
         std::cout << std::endl;
     }
-    //0.5 сек
     usleep(500000);
 }
