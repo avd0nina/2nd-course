@@ -1,8 +1,5 @@
 #include "model.h"
 
-
-
-
 int numByte(int ind) {
     return ind % 8 != 0 || ind == 0 ? ind / 8 + 1 : ind / 8;
 }
@@ -63,7 +60,6 @@ int Field::getSize() const {
     return size_;
 }
 
-// текущ состояние ячейки
 bool Field::getState(int row, int column) const{
     int num_chank = row * numByte(size_) + numByte(column);
     int pos = numInByte(column);
@@ -89,7 +85,7 @@ std::vector<bool> ruleToBool(const std::string &rule) {
     }
     return std::move(new_rule);
 }
-//кол-во соседей
+
 int neighbors(
         const Field &field,
         int size,
@@ -111,7 +107,6 @@ int neighbors(
     }
     return count;
 }
-
 
 Game_model::Game_model(): Game_model(
     Default_name, 
@@ -143,7 +138,6 @@ const std::string& Game_model::getName() const {
 int Game_model::getGlobIteration() const {
     return global_iteration_;
 }
-
 
 void Game_model::computeIteration() {
     auto old_field = current_field_ == 1? &field_1_: &field_2_;
