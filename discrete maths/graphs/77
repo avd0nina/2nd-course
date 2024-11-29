@@ -1,0 +1,8 @@
+Воспользуемся неравенством Коши-Буняковского:
+$\sum_{i = 1}^n \sqrt{a_i} \sqrt{b_i} <= \sqrt{\sum_{i = 1}^n a_i} \sqrt{\sum_{i = 1}^n b_i}$
+Возьмем $a_i = 1 + deg x_i, b_i = (1 + deg x_i)^{-1}$
+Возводя правую и левую часть в квадрат, получаем:
+$n^2 <= (\sum_i (1 + deg x_i))(\sum_i (1 + deg x_i)^{-1})$
+$n <= \frac{1}{n} (\sum_i (1 + deg x_i))(\sum_i (1 + deg x_i)^{-1})$
+$n <= (1 + d) \sum_i (1 + deg x_i)^{-1} <= (1 + d)\alpha_0(G)$
+$\alpha_0 >= \frac{n}{1 + d}$
