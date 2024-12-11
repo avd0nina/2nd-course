@@ -1,0 +1,16 @@
+Функция $f(x_1, ..., x_n)$ является линейной, если она может быть представлена в виде полинома Жегалкина $f(x_1, ..., x_n) = a_0 \oplus a_1 x_1 \oplus a_2 x_2 \oplus ... \oplus a_n x_n \oplus a_{12} x_1 x_2 \oplus ...$
+
+b) $m(x,y,z)\sim((x\downarrow y\downarrow z)\oplus xyz)$
+$x \downarrow y = \neg (x \lor y) = \neg x \land \neg y$
+$x \downarrow y \downarrow z = \neg (\neg x \land \neg y \land \neg z) = x \oplus y \oplus xy \oplus 1 \oplus z \oplus xz \oplus yz \oplus xyz$
+$(x\downarrow y\downarrow z)\oplus xyz = x \oplus y \oplus xy \oplus 1 \oplus z \oplus 1 \oplus xz \oplus yz \oplus xyz \oplus z \oplus xyz = x \oplus y \oplus z \oplus xy \oplus xz \oplus yz $
+$m(x, y, z) = x \oplus y \oplus xy \oplus xz \oplus yz$
+Построив таблицу истинности, получили вектор функции 11000011
+Берем вектор функции, делим пополам, затем на 4 части, и так до конца, если части равны или противоположные, то функция линейна
+Функция является линейной
+
+f) $(0000\,1111\,0110\,1001)$
+Первая половина: 0000 1111
+Вторая половина: 0110 1001
+Первая часть не равна второй и не равна отрицанию второй, значит функция не линейна. 
+Построив таблицу истинности, заметим, что свободного коэффициента нет, термов $x_3, x_4, x_3x_4$ нет, есть нелинейные термы $x_2x_3x_4$
