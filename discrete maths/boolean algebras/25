@@ -1,0 +1,18 @@
+d) $(x_1\vee (x_2\rightarrow(x_1\sim x_3)))\overline{x}_4$
+Преобразуем эквивалентность: $a ~ b = a \oplus b \oplus 1$
+По закону для операции $\oplus$: $\overline{x}_4 = x_4 \oplus 1$
+$(x_1\lor (x_2 \to ((x_1 \oplus x_3) \oplus 1)))(x_4 \oplus 1)$
+Преобразуем импликацию: $a \rightarrow b = \overline{a} \lor b$
+$(x_1 \lor ((1 \oplus x_2) \lor ((x_1 \oplus x_3) \oplus 1)))(x_4 \oplus 1)$
+Продолжим раскрывать скобки:
+$(x_1 \lor ((1 \oplus x_2) \oplus ((x_1 \oplus x_3) \oplus 1) \oplus ((x_1 \oplus x_3) \oplus 1))(1 \oplus x_2)))(x_4 \oplus 1) = x_1 \lor (x_1 \oplus x_2 \oplus x_3 \oplus (x_1 \oplus x_3 \oplus 1 \oplus x_1 x_2 \oplus x_3 x_2 \oplus x_2)))(x_4 \oplus 1) = (x_1 \oplus 1 \oplus x_2 x_3 \oplus x_1 x_2 \oplus x_1 \oplus x_1 x_2 x_3 \oplus x_1 x_2)(x_4 \oplus 1) = (1 \oplus x_2 x_3 \oplus x_1 x_2 x_3)(x_4 \oplus 1) = 1 \oplus x_4 \oplus x_2 x_3 \oplus x_1 x_2 x_3 \oplus x_2 x_3 x_4 \oplus x_1 x_2 x_3 x_4$
+
+e) $(x_1\mid(x_2\vee \overline{x}_3))\rightarrow (x_2\downarrow x_3)$ 
+Используем следующее:
+$x_2 \downarrow x_3 = \overline{x}_2 \land \overline{x}_3$
+А также закон для операции $\oplus$
+$(x_1\mid(x_2 \oplus x_3 \oplus 1 \oplus x_2x_3 \oplus x_2))\rightarrow (1 \oplus x_2 \oplus x_3 \oplus x_2x_3) = (x_1\mid(x_3 \oplus 1 \oplus x_2x_3))\rightarrow (1 \oplus x_2 \oplus x_3 \oplus x_2x_3)$
+Разложим |:
+$(1 \oplus x_1 \oplus x_1x_3 \oplus x_1x_2x_3) \rightarrow (1 \oplus x_2 \oplus x_3 \oplus x_2x_3)$
+Преобразуем импликацию и продолжим раскрывать скобки:
+$1 \oplus (1 \oplus x_1 \oplus x_1x_3 \oplus x_1x_2x_3) \oplus (1 \oplus x_1 \oplus x_1x_3 \oplus x_1x_2x_3)(1 \oplus x_2 \oplus x_3 \oplus x_2x_3) = x_1 \oplus x_1x_3 \oplus x_1x_2x_3 \oplus (1 \oplus x_2 \oplus x_3 \oplus x_2x_3 \oplus x_1 \oplus x_1x_2 \oplus x_1x_3 \oplus x_1x_2x_3 \oplus x_1x_3 \oplus x_1x_2x_3 \oplus x_1x_3 \oplus x_1x_2x_3 \oplus x_1x_2x_3 \oplus x_1x_2x_3 \oplus x_1x_2x_3 \oplus x_1x_2x_3) = x_1 \oplus x_1x_3 \oplus x_1x_2x_3 \oplus (1 \oplus x_1 \oplus x_2 \oplus x_3 \oplus x_1x_2 \oplus x_2x_3 \oplus x_1x_3 \oplus x_1x_2x_3) = 1 \oplus x_2 \oplus x_3 \oplus x_1x_2 \oplus x_2x_3$
