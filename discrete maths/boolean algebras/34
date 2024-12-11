@@ -1,0 +1,12 @@
+c) Попробуем свести систему $\{x\sim y,$ $x\oplus y,$ $xy\oplus z\};$ к заведомо полной системе $\{\neg, \lor, \land\}$
+1 = $x \sim x$
+0 = $\neg 1 = (x \sim x) \sim 1$
+1) Выразим отрицание
+$\neg x = x \sim 1$
+2) Выразим логическое И
+$x \land y = xy \oplus 0 = xy$
+3) Выразим логическое ИЛИ
+$x \oplus y = (x \land \neg y) \lor (\neg x \land y)$
+$x \lor y = (x \land \neg y) \lor (\neg x \land y) \lor (x \land y)$
+Отсюда $x \lor y = (x \oplus y) \lor (x \land y) = \neg(\neg(x \oplus y) \land \neg(x \land y)) = ((x \oplus y) \sim 1 \land (xy \sim 1)) \sim 1$
+Значит, система $\{x\sim y,$ $x\oplus y,$ $xy\oplus z\};$ - полная
