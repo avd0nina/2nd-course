@@ -1,0 +1,11 @@
+a) $f(x_1, x_2, x_3) = C_0 \oplus C_1 x_1 \oplus C_2 x_2 \oplus C_3 x_3 \oplus C_4 x_1 x_2 \oplus C_5 x_1 x_3 \oplus C_6 x_2 x_3 \oplus C_7 x_1 x_2 x_3$
+$f(0,0,0) = C_0 = 1$
+$f(0,0,1) = C_0 \oplus C_3 = 1 => C_3 = 0$
+$f(0,1,0) = C_0 \oplus C_2 = 0 => C_2 = 1$
+$f(0,1,1) = C_0 \oplus C_2 \oplus C_3 \oplus C_6 = 0 => C_6 = 0$
+$f(1,0,0) = C_0 \oplus C_1 = 0 => C_1 = 1$
+$f(1,0,1) = C_0 \oplus C_1 \oplus C_3 \oplus C_5 = 1 => C_5 = 1$
+$f(1,1,0) = C_0 \oplus C_1 \oplus C_2 \oplus C_4 = 0 => C_4 = 1$
+$f(1,1,1) = C_0 \oplus C_1 \oplus C_2 \oplus C_3 \oplus C_4 \oplus C_5 \oplus C_6 \oplus C_7 = 1 => C_7 = 0$
+$f(x_1, x_2, x_3) = C_0 \oplus C_1 x_1 \oplus C_2 x_2 \oplus C_4 x_1 x_2 \oplus C_5 x_1 x_3$
+$f(x_1, x_2, x_3) = 1 \oplus x_1 \oplus x_2 \oplus x_1 x_2 \oplus x_1 x_3$
