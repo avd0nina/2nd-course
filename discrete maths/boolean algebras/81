@@ -1,0 +1,29 @@
+CДНФ: 
+$(\neg x_1 \land \neg x_2 \land x_3 \land \neg x_4) \lor (\neg x_1 \land \neg x_2 \land x_3 \land x_4) \lor (\neg x_1 \land x_2 \land \neg x_3 \land \neg x_4) \lor (\neg x_1 \land x_2 \land x_3 \land \neg x_4) \lor (\neg x_1 \land x_2 \land x_3 \land x_4) \lor (x_1 \land \neg x_2 \land \neg x_3 \land \neg x_4) \lor (x_1 \land \neg x_2 \land \neg x_3 \land x_4) \lor (x_1 \land \neg x_2 \land x_3 \land \neg x_4) \lor (x_1 \land \neg x_2 \land x_3 \land x_4) \lor (x_1 \land x_2 \land \neg x_3 \land x_4) \lor (x_1 \land x_2 \land x_3 \land \neg x_4) \lor (x_1 \land x_2 \land x_3 \land x_4)$
+
+Cклеивание:
+$(\neg x_1 \land \neg x_2 \land x_3) \lor (\neg x_1 \land x_3 \land \neg x_4) \lor (\neg x_2 \land x_3 \land \neg x_4) \lor (\neg x_1 \land x_3 \land x_4) \lor (\neg x_2 \land x_3 \land x_4) \lor (\neg x_1 \land x_2 \land x_3) \lor (x_2 \land x_3 \land \neg x_4) \lor (x_2 \land x_3 \land x_4) \lor (x_1 \land \neg x_2 \land \neg x_3) \lor (x_1 \land \neg x_3 \land x_4) \lor (x_1 \land \neg x_2 \land x_3) \lor (x_1 \land x_3 \land \neg x_4) \lor (x_1 \land x_3 \land x_4) \lor (x_1 \land x_2 \land x_3) \lor (\neg x_1 \land x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land x_4) \lor (x_1 \land x_2 \land x_4)$
+
+Приписываем к СДНФ:
+$(\neg x_1 \land \neg x_2 \land x_3) \lor (\neg x_1 \land x_3 \land \neg x_4) \lor (\neg x_2 \land x_3 \land \neg x_4) \lor (\neg x_1 \land x_3 \land x_4) \lor (\neg x_2 \land x_3 \land x_4) \lor (\neg x_1 \land x_2 \land x_3) \lor (x_2 \land x_3 \land \neg x_4) \lor (x_2 \land x_3 \land x_4) \lor (x_1 \land \neg x_2 \land \neg x_3) \lor (x_1 \land \neg x_3 \land x_4) \lor (x_1 \land \neg x_2 \land x_3) \lor (x_1 \land x_3 \land \neg x_4) \lor (x_1 \land x_3 \land x_4) \lor (x_1 \land x_2 \land x_3) \lor (\neg x_1 \land x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land x_4) \lor (x_1 \land x_2 \land x_4) \lor (\neg x_1 \land \neg x_2 \land x_3) \lor (\neg x_1 \land x_3 \land \neg x_4) \lor (\neg x_2 \land x_3 \land \neg x_4) \lor (\neg x_1 \land x_3 \land x_4) \lor (\neg x_2 \land x_3 \land x_4) \lor (\neg x_1 \land x_2 \land x_3) \lor (x_2 \land x_3 \land \neg x_4) \lor (x_2 \land x_3 \land x_4) \lor (x_1 \land \neg x_2 \land \neg x_3) \lor (x_1 \land \neg x_3 \land x_4) \lor (x_1 \land \neg x_2 \land x_3) \lor (x_1 \land x_3 \land \neg x_4) \lor (x_1 \land x_3 \land x_4) \lor (x_1 \land x_2 \land x_3) \lor (\neg x_1 \land x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land x_4) \lor (x_1 \land x_2 \land x_4)$
+
+Поглощение:
+$(\neg x_1 \land \neg x_2 \land x_3) \lor (\neg x_1 \land x_3 \land \neg x_4) \lor (\neg x_2 \land x_3 \land \neg x_4) \lor (\neg x_1 \land x_3 \land x_4) \lor (\neg x_2 \land x_3 \land x_4) \lor (\neg x_1 \land x_2 \land x_3) \lor (x_2 \land x_3 \land \neg x_4) \lor (x_2 \land x_3 \land x_4) \lor (x_1 \land \neg x_2 \land \neg x_3) \lor (x_1 \land \neg x_3 \land x_4) \lor (x_1 \land \neg x_2 \land x_3) \lor (x_1 \land x_3 \land \neg x_4) \lor (x_1 \land x_3 \land x_4) \lor (x_1 \land x_2 \land x_3) \lor (\neg x_1 \land x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land x_4) \lor (x_1 \land x_2 \land x_4)$
+
+Склеивание:
+$(\neg x_1 \land x_3) \lor (\neg x_2 \land x_3) \lor (\neg x_1 \land x_3) \lor (x_3 \land x_4) \lor (\neg x_2 \land x_3) \lor (x_3 \land \neg x_4) \lor (x_3 \land \neg x_4) \lor (x_3 \land x_4) \lor (x_2 \land x_3) \lor (x_2 \land x_3) \lor (x_1 \land \neg x_2) \lor (x_1 \land x_4) \lor (x_1 \land x_3) \lor (x_1 \land x_3)$
+
+Убираем дублирования:
+$(\neg x_1 \land x_3) \lor (x_3 \land x_4) \lor (\neg x_2 \land x_3) \lor (x_3 \land \neg x_4) \lor (x_2 \land x_3) \lor (x_1 \land \neg x_2) \lor (x_1 \land x_4) \lor (x_1 \land x_3)$
+
+Приписываем:
+$(\neg x_1 \land x_3) \lor (\neg x_2 \land x_3) \lor (\neg x_1 \land x_3) \lor (x_3 \land x_4) \lor (\neg x_2 \land x_3) \lor (x_3 \land \neg x_4) \lor (x_3 \land \neg x_4) \lor (x_3 \land x_4) \lor (x_2 \land x_3) \lor (x_2 \land x_3) \lor (x_1 \land \neg x_2) \lor (x_1 \land x_4) \lor (x_1 \land x_3) \lor (x_1 \land x_3)$ \lor (\neg x_1 \land x_3) \lor (x_3 \land x_4) \lor (\neg x_2 \land x_3) \lor (x_3 \land \neg x_4) \lor (x_2 \land x_3) \lor (x_1 \land \neg x_2) \lor (x_1 \land x_4) \lor (x_1 \land x_3)$
+
+Поглощаем:
+$(\neg x_1 \land x_3) \lor (x_3 \land x_4) \lor (\neg x_2 \land x_3) \lor (x_3 \land \neg x_4) \lor (x_2 \land x_3) \lor (x_1 \land \neg x_2) \lor (x_1 \land x_4) \lor (x_1 \land x_3) \lor (\neg x_1 \land x_2 \land \neg x_4)$
+
+Склеивание:
+$x_3$
+
+Приписываем и поглощаем:
+$(x_1 \land \neg x_2) \lor (x_1 \land x_4) \lor (neg x_1 \land x_2 \land \neg x_4) \lor x_3$
