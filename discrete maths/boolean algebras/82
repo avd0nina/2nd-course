@@ -1,0 +1,8 @@
+d)  $x_2x_3 \vee x_1\overline{x}_2x_3 \vee \overline{x}_2\overline{x}_3 \vee x_1x_2\overline{x}_4 \vee \overline{x}_1\overline{x}_4 \vee x_1\overline{x}_3\overline{x}_4$
+
+Обогащенное склеивание и приписывание:
+
+$(x_2 \land x_3) \lor (x_1 \land \neg x_2 \land x_3) \lor (\neg x_2 \land \neg x_3) \lor (x_1 \land x_2 \land \neg x_4) \lor (\neg x_1 \land \neg x_4) \lor (x_1 \land \neg x_3 \land \neg x_4) \lor (x_1 \land x_3) \lor (\neg x_2 \land x_3 \land \neg x_4) \lor (x_1 \land x_3 \land \neg x_4) \lor (x_1 \land \neg x_3 \land \neg x_4) \lor (x_1 \land \neg x_2) \lor (\neg x_2 \land \neg x_4) \lor (x_1 \land \neg x_2 \land \neg x_4) \lor (x_2 \land \neg x_4) \lor (x_1 \land \neg x_4) \lor (\neg x_3 \land \neg x_4) \lor (x_3 \land \neg x_4) \lor (\neg x_4)$
+
+Поглощение:
+$(x_2 \land x_3) \lor (\neg x_2 \land \neg x_3) \lor (x_1 \land x_3) \lor (x_1 \land \neg x_2) \lor (\neg x_4)$
