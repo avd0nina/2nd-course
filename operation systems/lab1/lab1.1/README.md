@@ -1,16 +1,26 @@
-Написать программу hello.c, которая выводит фразу “Hello world”:
-a. получить исполняемый файл;
+# Блок задач на “удовлетворительно”
 
-gcc hello.c -o hello -Wall
++ Написать программу `hello.c`, которая выводит фразу `“Hello world”`;
+a. Получить исполняемый файл:
 
-b. посмотреть unresolved symbols (puts, printf) с помощью nm;
+```bash
+user@host:~$ gcc hello.c -o hello -Wall
+```
 
-nm ./hello
+b. Посмотреть `unresolved symbols` (`puts`, `printf`) с помощью `nm`:
 
-c. посмотреть зависимости (ldd);
+```bash
+user@host:~$ nm ./hello 
+```
 
-otool -L hello
+c. Посмотреть зависимости разделяемых библиотек:
 
-d. запустить
+```bash
+user@host:~$ otool -L ./hello 
+```
 
-./hello
+d Запустить:
+
+```bash
+user@host:~$ ./hello 
+```
