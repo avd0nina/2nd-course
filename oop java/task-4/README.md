@@ -1,7 +1,5 @@
 # Задание 4. Многопоточное приложение «Эмулятор работы фабрики»
 
-[![Testing](https://github.com/ptrvsrg/car-factory/actions/workflows/maven.yml/badge.svg)](https://github.com/ptrvsrg/car-factory/actions/workflows/maven.yml)
-
 ## Постановка задачи
 
 Напишите приложение, эмулирующее работу фабрики по сборке автомашин. 
