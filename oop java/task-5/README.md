@@ -1,7 +1,5 @@
 # Задание 5. Сетевое программирование, сериализация, XML-файлы
 
-[![Testing](https://github.com/ptrvsrg/chat/actions/workflows/maven.yml/badge.svg)](https://github.com/ptrvsrg/chat/actions/workflows/maven.yml)
-
 ## Описание
 Напишите программу для общения через `Internet`. 
 Программа должна состоять из двух частей: сервер и клиент. 
