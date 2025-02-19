@@ -14,7 +14,7 @@
 ### Реализация
 //В этой задаче для простоты не требуется делать контейнер шаблонным,
 //но это вполне допускается по желанию студента.
-class BitArray
+``` class BitArray
 {
 public:
 BitArray();
@@ -91,5 +91,4 @@ bool operator!=(const BitArray & a, const BitArray & b);
 
 BitArray operator&(const BitArray& b1, const BitArray& b2);
 BitArray operator|(const BitArray& b1, const BitArray& b2);
-BitArray operator^(const BitArray& b1, const BitArray& b2);
-
+BitArray operator^(const BitArray& b1, const BitArray& b2); ```
