@@ -1,25 +1,25 @@
 # Блок задач на “удовлетворительно”
 
 + Написать программу `hello.c`, которая выводит фразу `“Hello world”`;
-a. Получить исполняемый файл:
++ Получить исполняемый файл:
 
 ```bash
 user@host:~$ gcc hello.c -o hello -Wall
 ```
 
-b. Посмотреть `unresolved symbols` (`puts`, `printf`) с помощью `nm`:
++ Посмотреть `unresolved symbols` (`puts`, `printf`) с помощью `nm`:
 
 ```bash
 user@host:~$ nm ./hello 
 ```
 
-c. Посмотреть зависимости разделяемых библиотек:
++ Посмотреть зависимости разделяемых библиотек:
 
 ```bash
-user@host:~$ otool -L ./hello 
+user@host:~$ ldd ./hello 
 ```
 
-d Запустить:
++ Запустить:
 
 ```bash
 user@host:~$ ./hello 
