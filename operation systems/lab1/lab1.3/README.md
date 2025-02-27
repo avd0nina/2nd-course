@@ -1,6 +1,6 @@
 # Блок задач на “отлично”
 
-+ Написать динамическую библиотеку с функцией `print_hello_from_dynamic_lib()` и использовать ее с `hello.c`:
++ Написать динамическую библиотеку с функцией `hello_from_dynamic_lib()` и использовать ее с `hello.c`:
 
 ```bash
 user@host:~$ gcc hello_dynamic.c -c -fpic -o hello_dynamic.o -Wall
@@ -11,7 +11,7 @@ user@host:~$ export LD_LIBRARY_PATH=./
 user@host:~$ ./hello
 ```
 
-+ Посмотреть состояние функции `print_hello_from_dynamic_lib()` в получившимся исполняемом файле. Объяснить увиденное:
++ Посмотреть состояние функции `hello_from_dynamic_lib()` в получившимся исполняемом файле. Объяснить увиденное:
   
 ```bash
 user@host:~$ nm ./hello
