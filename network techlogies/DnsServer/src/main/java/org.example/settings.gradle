@@ -1,0 +1,5 @@
+rootProject.name = 'DnsServer'
+
+include 'client'
+include 'server'
+include 'util'
