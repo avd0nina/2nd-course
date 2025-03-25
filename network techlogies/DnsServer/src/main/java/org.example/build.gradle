@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.pds'
+version = '1.0'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    }
+}
+
