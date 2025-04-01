@@ -2,6 +2,6 @@ package org.example.server.request;
 
 public record RegisterDnsRequest(
         String domainName,
-        String address
+        String addressWithPort
 ) implements DnsRequest {
 }
