@@ -28,8 +28,8 @@ public class DnsResponseGenerator {
                 if (domainTable.containsKey(registerDnsRequest.domainName())) {
                     throw new DnsException("Duplicate domain name: " + registerDnsRequest.domainName());
                 }
-                domainTable.put(registerDnsRequest.domainName(), registerDnsRequest.address());
-                yield new RegisterDnsResponse(registerDnsRequest.domainName(), registerDnsRequest.address());
+                domainTable.put(registerDnsRequest.domainName(), registerDnsRequest.addressWithPort());
+                yield new RegisterDnsResponse(registerDnsRequest.domainName(), registerDnsRequest.addressWithPort());
             }
         };
     }
