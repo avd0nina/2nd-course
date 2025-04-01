@@ -7,20 +7,21 @@ import java.util.Scanner;
 
 public class DnsClient {
     private static final int DNS_PORT = 5354;
-    private static final int HTTP_PORT = 8080;
     private static String domainName;
     private static String dnsServerAddress = "255.255.255.255";
+    private static int clientPort;
 
     public static void main(String[] args) {
         System.out.println("DNS Client start");
-        if (args.length < 2) {
-            System.out.println("Usage: java DnsClient <domain> <address>");
+        if (args.length < 3) {
+            System.out.println("Usage: java DnsClient <domain> <address> <port>");
             return;
         }
         domainName = args[0];
         String ipAddress = args[1];
+        clientPort = Integer.parseInt(args[2]);
         discoverDnsServer();
-        registerWithDns(domainName, ipAddress);
+        registerWithDns(domainName, ipAddress + ":" + clientPort);
         startHttpServer();
         startUserInputListener(); // Новая функция для пользовательского ввода
     }
@@ -46,9 +47,9 @@ public class DnsClient {
         }
     }
 
-    private static void registerWithDns(String domain, String ip) {
+    private static void registerWithDns(String domain, String addressWithPort) {
         try (DatagramSocket socket = new DatagramSocket()) {
-            String message = "REGISTER " + domain + " " + ip;
+            String message = "REGISTER " + domain + " " + addressWithPort;
             byte[] buffer = message.getBytes();
             DatagramPacket packet = new DatagramPacket(
                     buffer,
@@ -64,8 +65,8 @@ public class DnsClient {
 
     private static void startHttpServer() {
         new Thread(() -> {
-            try (ServerSocket serverSocket = new ServerSocket(HTTP_PORT)) {
-                System.out.println("HTTP Server running on port " + HTTP_PORT);
+            try (ServerSocket serverSocket = new ServerSocket(clientPort)) {
+                System.out.println("HTTP Server running on port " + clientPort);
                 while (true) {
                     Socket client = serverSocket.accept();
                     PrintWriter out = new PrintWriter(client.getOutputStream(), true);
@@ -84,20 +85,13 @@ public class DnsClient {
         new Thread(() -> {
             try (Scanner scanner = new Scanner(System.in)) {
                 while (true) {
-                    System.out.println("Enter a command (SEND <domain> <message> or EXIT):");
+                    System.out.println("Enter domain name to connect (or EXIT to quit):");
                     String input = scanner.nextLine();
                     if (input.equalsIgnoreCase("EXIT")) {
                         System.out.println("Exiting...");
                         break;
                     }
-                    String[] parts = input.split(" ", 3);
-                    if (parts.length < 3 || !parts[0].equalsIgnoreCase("SEND")) {
-                        System.out.println("Invalid command. Usage: SEND <domain> <message>");
-                        continue;
-                    }
-                    String domainName = parts[1];
-                    String message = parts[2];
-                    sendMessageToClient(domainName, message);
+                    queryDomain(input);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -105,37 +99,26 @@ public class DnsClient {
         }).start();
     }
 
-    private static void sendMessageToClient(String domainName, String message) {
+    private static void queryDomain(String domain) {
         try (DatagramSocket socket = new DatagramSocket()) {
-            String queryMessage = "QUERY " + domainName;
-            byte[] queryBuffer = queryMessage.getBytes();
-            DatagramPacket queryPacket = new DatagramPacket(
-                    queryBuffer,
-                    queryBuffer.length,
+            String message = "QUERY " + domain;
+            byte[] buffer = message.getBytes();
+            DatagramPacket packet = new DatagramPacket(
+                    buffer,
+                    buffer.length,
                     InetAddress.getByName(dnsServerAddress),
                     DNS_PORT
             );
-            socket.send(queryPacket);
+            socket.send(packet);
+
             byte[] responseBuffer = new byte[256];
             DatagramPacket responsePacket = new DatagramPacket(responseBuffer, responseBuffer.length);
             socket.receive(responsePacket);
-            String clientIp = new String(responsePacket.getData(), 0, responsePacket.getLength());
-            if (clientIp.startsWith("ERROR")) {
-                System.out.println("Error: " + clientIp);
-                return;
-            }
-            System.out.println("Client IP found: " + clientIp);
-            byte[] messageBuffer = message.getBytes();
-            DatagramPacket messagePacket = new DatagramPacket(
-                    messageBuffer,
-                    messageBuffer.length,
-                    InetAddress.getByName(clientIp),
-                    HTTP_PORT
-            );
-            socket.send(messagePacket);
-            System.out.println("Message sent to client: " + domainName);
+            String response = new String(responsePacket.getData(), 0, responsePacket.getLength());
+            System.out.println("DNS Response for " + domain + ": " + response);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
+
