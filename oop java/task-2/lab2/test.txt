@@ -1,0 +1,14 @@
+PUSH 2
+PUSH 2
+/
+DEFINE a 4
+PUSH a
+PUSH 2
++
+PUSH 6
+PUSH 3
+-
+PUSH 4
+SQRT
+PRINT
+#Hello
