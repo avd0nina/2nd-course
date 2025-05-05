@@ -1,0 +1,6 @@
+rootProject.name = 'Snake'
+include 'model'
+include 'controller'
+include 'view'
+include 'app'
+
