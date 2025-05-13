@@ -5,7 +5,7 @@ import ru.nsu.avdonina.model.products.Body;
 import ru.nsu.avdonina.model.storage.Storage;
 import ru.nsu.avdonina.model.work.WorkersCreator;
 
-public class BodySuppliersCreator extends WorkersCreator<BodySupplier> { // фабрика для создания объектов типа BodySupplier
+public class BodySuppliersCreator extends WorkersCreator<BodySupplier> {
     private final Storage<Body> storage;
     private final SupplyListener supplyListener;
 
