@@ -1,7 +1,5 @@
 package ru.nsu.avdonina.model.work;
 
-import ru.nsu.avdonina.model.work.factory.Worker;
-
 public abstract class WorkersCreator<W extends Worker> {
     private int workTime;
 
