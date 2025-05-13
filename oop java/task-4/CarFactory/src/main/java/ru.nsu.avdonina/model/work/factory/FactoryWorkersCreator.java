@@ -9,8 +9,7 @@ import ru.nsu.avdonina.model.products.Engine;
 import ru.nsu.avdonina.model.storage.Storage;
 import ru.nsu.avdonina.model.work.WorkersCreator;
 
-public class FactoryWorkersCreator extends WorkersCreator<FactoryWorker> {
-    private final Object workersSynchronizationObject;
+public class FactoryWorkersCreator extends WorkersCreator<CarAssemblyTask> {
     private final Storage<Body> bodyStorage;
     private final Storage<Engine> engineStorage;
     private final Storage<Accessory> accessoryStorage;
@@ -25,9 +24,7 @@ public class FactoryWorkersCreator extends WorkersCreator<FactoryWorker> {
                                  CarAssembleListener carAssembleListener,
                                  FactoryTasksListener factoryTasksListener,
                                  int workTime) {
-
         super(workTime);
-        this.workersSynchronizationObject = new Object();
         this.bodyStorage = bodyStorage;
         this.engineStorage = engineStorage;
         this.accessoryStorage = accessoryStorage;
@@ -36,21 +33,16 @@ public class FactoryWorkersCreator extends WorkersCreator<FactoryWorker> {
         this.factoryTasksListener = factoryTasksListener;
     }
 
-    public Object getWorkersSynchronizationObject() {
-        return workersSynchronizationObject;
-    }
-
     @Override
-    public FactoryWorker createWorker() {
-        return new FactoryWorker(
+    public CarAssemblyTask createWorker() {
+        return new CarAssemblyTask(
                 getWorkTime(),
                 bodyStorage,
                 engineStorage,
                 accessoryStorage,
                 carStorage,
                 carAssembleListener,
-                factoryTasksListener,
-                workersSynchronizationObject
+                factoryTasksListener
         );
     }
 }
