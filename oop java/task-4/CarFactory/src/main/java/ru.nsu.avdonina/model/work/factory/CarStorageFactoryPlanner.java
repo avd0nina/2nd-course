@@ -13,6 +13,6 @@ public class CarStorageFactoryPlanner extends FactoryPlanner {
 
     @Override
     public int getNewTasksCount() {
-        return carStorage.getRemainingCapacity() > 0 ? carStorage.getMaxCapacity() : 0; // Если на складе есть свободное место (> 0), то планировщик говорит: "давай произведем машин столько, сколько максимум можно хранить".
+        return carStorage.getRemainingCapacity();
     }
 }
