@@ -10,7 +10,7 @@ public class BodySupplier extends Supplier<Body> {
     }
 
     @Override
-    public Body supply() {
+    protected Body supply() {
         return new Body();
     }
 }
